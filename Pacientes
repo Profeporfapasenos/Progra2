@@ -1,0 +1,64 @@
+package sistemapacientes;
+
+public class Pacientes {
+    String nombre;
+    String condicion;
+    String telefono;
+    String Padecimiento;
+    String Detallesdepadecimiento;
+    
+    
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getCondicion() {
+        return condicion;
+    }
+
+    public void setCondicion(String condicion) {
+        this.condicion = condicion;
+    }
+
+    public String getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
+    }
+
+    public String getPadecimiento() {
+        return Padecimiento;
+    }
+
+    public void setPadecimiento(String Padecimiento) {
+        this.Padecimiento = Padecimiento;
+    }
+
+    public String getDetallesdepadecimiento() {
+        return Detallesdepadecimiento;
+    }
+
+    public void setDetallesdepadecimiento(String Detallesdepadecimiento) {
+        this.Detallesdepadecimiento = Detallesdepadecimiento;
+    }
+
+    public Pacientes(String nombre, String condicion, String telefono, String Padecimiento, String Detallesdepadecimiento) {
+        this.nombre = nombre;
+        this.condicion = condicion;
+        this.telefono = telefono;
+        this.Padecimiento = Padecimiento;
+        this.Detallesdepadecimiento = Detallesdepadecimiento;
+    }
+
+    @Override
+    public String toString() {
+        return "Pacientes{" + "nombre=" + nombre + ", condicion=" + condicion + ", telefono=" + telefono + ", Padecimiento=" + Padecimiento + ", Detallesdepadecimiento=" + Detallesdepadecimiento + '}';
+    }    
+}
