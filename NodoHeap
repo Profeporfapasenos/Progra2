@@ -1,0 +1,19 @@
+
+  public class NodoHeap {
+
+    
+   private int Dato;  
+
+   public NodoHeap(int key){
+       Dato = key; 
+   }
+
+   public int getKey(){
+       return Dato; 
+   }
+
+   public void setKey(int id){
+       Dato = id; 
+   }
+    
+}
