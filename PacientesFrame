@@ -1,0 +1,267 @@
+package sistemapacientes;
+
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+
+public class PacientesFrame extends javax.swing.JFrame {
+    Cola cola = new Cola();
+    Pacientes pacientes;
+    public PacientesFrame() {
+        initComponents();
+        //pacientes = pPacientes;
+        setSize(815, 607);
+        
+        ComboDia.removeAllItems();
+        ComboDia.addItem("1");
+        ComboDia.addItem("2");
+        ComboDia.addItem("3");
+        ComboDia.addItem("4");
+        ComboDia.addItem("5");
+        ComboDia.addItem("6");
+        ComboDia.addItem("7");
+        ComboDia.addItem("8");
+        ComboDia.addItem("9");
+        ComboDia.addItem("10");
+        ComboDia.addItem("11");
+        ComboDia.addItem("12");
+        ComboDia.addItem("13");
+        ComboDia.addItem("14");
+        ComboDia.addItem("15");
+        ComboDia.addItem("16");
+        ComboDia.addItem("17");
+        ComboDia.addItem("18");
+        ComboDia.addItem("19");
+        ComboDia.addItem("20");
+        ComboDia.addItem("21");
+        ComboDia.addItem("22");
+        ComboDia.addItem("23");
+        ComboDia.addItem("24");
+        ComboDia.addItem("25");
+        ComboDia.addItem("26");
+        ComboDia.addItem("27");
+        ComboDia.addItem("28");
+        ComboDia.addItem("29");
+        ComboDia.addItem("30");
+        ComboDia.addItem("31");
+        
+        ComboMes.removeAllItems();
+        ComboMes.addItem("Enero");
+        ComboMes.addItem("Febrero");
+        ComboMes.addItem("Marzo");
+        ComboMes.addItem("Abril");
+        ComboMes.addItem("Mayo");
+        ComboMes.addItem("Junio");
+        ComboMes.addItem("Julio");
+        ComboMes.addItem("Agosto");
+        ComboMes.addItem("Septiembre");
+        ComboMes.addItem("Octubre");
+        ComboMes.addItem("Noviembre");
+        ComboMes.addItem("Diciembre");
+        
+        ComboAño.removeAllItems();
+        ComboAño.addItem("2000");
+        ComboAño.addItem("1999");
+        ComboAño.addItem("1998");
+        ComboAño.addItem("1997");
+        ComboAño.addItem("1996");
+        ComboAño.addItem("1995");
+        ComboAño.addItem("1994");
+        ComboAño.addItem("1993");
+        ComboAño.addItem("1992");
+        ComboAño.addItem("1991");
+        
+        ComboPadecimiento.removeAllItems();
+        ComboPadecimiento.addItem("Infarto");
+        ComboPadecimiento.addItem("Perdida de sangre por herida");
+        ComboPadecimiento.addItem("Parto");
+        ComboPadecimiento.addItem("Dolor estomacal");
+        ComboPadecimiento.addItem("Quebradura");
+        ComboPadecimiento.addItem("Otro");
+        
+        ComboCondicion.removeAllItems();
+        ComboCondicion.addItem("Verde");
+        ComboCondicion.addItem("Amarillo");
+        ComboCondicion.addItem("Rojo");
+    }
+//    public PacientesFrame(Pacientes pPacientes){
+//        setSize(815, 607);
+//        Pacientes = pPacientes;
+//        TextPaciente.getText(Pacientes.setNombre());
+//        txtHorario.setText(Pacientes.getHorario());
+//        txtUbicacion.setText(Pacientes.getUbicacion());
+//        txtTelefono.setText(Pacientes.getTelefono());
+//        txtPais.setText(Pacientes.getPais());
+//    }
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
+    private void initComponents() {
+
+        jLabel1 = new javax.swing.JLabel();
+        TextPaciente = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        ComboDia = new javax.swing.JComboBox<>();
+        ComboMes = new javax.swing.JComboBox<>();
+        ComboAño = new javax.swing.JComboBox<>();
+        jLabel3 = new javax.swing.JLabel();
+        TextDetalle = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        ComboPadecimiento = new javax.swing.JComboBox<>();
+        jLabel5 = new javax.swing.JLabel();
+        ComboCondicion = new javax.swing.JComboBox<>();
+        jLabel6 = new javax.swing.JLabel();
+        TextNumero = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setText("Nombre del paciente:");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, -1, -1));
+
+        TextPaciente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TextPacienteActionPerformed(evt);
+            }
+        });
+        getContentPane().add(TextPaciente, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 20, 150, -1));
+
+        jLabel2.setText("Fecha de nacimiento:");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, -1, -1));
+
+        ComboDia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        getContentPane().add(ComboDia, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 50, -1, -1));
+
+        ComboMes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        ComboMes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ComboMesActionPerformed(evt);
+            }
+        });
+        getContentPane().add(ComboMes, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 50, 80, -1));
+
+        ComboAño.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        getContentPane().add(ComboAño, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 50, -1, -1));
+
+        jLabel3.setText("Detalle del padecimiento:");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, -1, -1));
+        getContentPane().add(TextDetalle, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 80, 160, 100));
+
+        jLabel4.setText("Tipo de padecimiento:");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, -1, -1));
+
+        ComboPadecimiento.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        getContentPane().add(ComboPadecimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 190, -1, -1));
+
+        jLabel5.setText("Condicion:");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, -1, -1));
+
+        ComboCondicion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        ComboCondicion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ComboCondicionActionPerformed(evt);
+            }
+        });
+        getContentPane().add(ComboCondicion, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 220, -1, -1));
+
+        jLabel6.setText("Telefono:");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, -1, -1));
+        getContentPane().add(TextNumero, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 260, 110, -1));
+
+        jButton1.setText("Ingresar Paciente");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 300, -1, -1));
+
+        pack();
+    }// </editor-fold>                        
+
+    private void TextPacienteActionPerformed(java.awt.event.ActionEvent evt) {                                             
+        // TODO add your handling code here:
+    }                                            
+
+    private void ComboMesActionPerformed(java.awt.event.ActionEvent evt) {                                         
+        // TODO add your handling code here:
+    }                                        
+
+    private void ComboCondicionActionPerformed(java.awt.event.ActionEvent evt) {                                               
+        // TODO add your handling code here:
+    }                                              
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+        // TODO add1 your handling code here:
+        //Ingreso del paciente a la cola
+        String nombre = TextPaciente.getText();
+        String detalle = TextDetalle.getText();
+        String padecimiento = ComboPadecimiento.getSelectedItem().toString();
+        String condicion = ComboCondicion.getSelectedItem().toString();
+        String numero = TextNumero.getText();
+        Pacientes paciente = new Pacientes(nombre, condicion, numero, padecimiento, detalle);
+            //try {
+            cola.encolar(paciente);
+            System.out.println(cola.toString());
+            JOptionPane.showMessageDialog(this, "El paciente ha sido registrado exitosamente");
+            //}
+            //catch (ErrorC ex) {
+            //Logger.getLogger(Pacientes.class.getName()).log(Level.SEVERE, null, ex);
+            //}
+        
+    }                                        
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(PacientesFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(PacientesFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(PacientesFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(PacientesFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new PacientesFrame().setVisible(true);
+            }
+        });
+    }
+
+    // Variables declaration - do not modify                     
+    private javax.swing.JComboBox<String> ComboAño;
+    private javax.swing.JComboBox<String> ComboCondicion;
+    private javax.swing.JComboBox<String> ComboDia;
+    private javax.swing.JComboBox<String> ComboMes;
+    private javax.swing.JComboBox<String> ComboPadecimiento;
+    private javax.swing.JTextField TextDetalle;
+    private javax.swing.JTextField TextNumero;
+    private javax.swing.JTextField TextPaciente;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    // End of variables declaration                   
+}
