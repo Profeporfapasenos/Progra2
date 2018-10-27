@@ -1,6 +1,4 @@
 public class Heap {
-
-
    private NodoHeap[] heapArray;
    private int tamañoMax;           // tamaño del array
    private int tamaño;       // Numero de nodos en el array
@@ -12,32 +10,33 @@ public class Heap {
       heapArray = new NodoHeap[tamañoMax];  // creamos el array
       }
 
+
    public boolean isEmpty()
       { return tamaño==0; }
 
-   public boolean insert(int key)
+   public boolean insert(Pacientes element)
       {
       if(tamaño==tamañoMax)
          return false;
-      NodoHeap newNode = new NodoHeap(key);
+      NodoHeap newNode = new NodoHeap(element);
       heapArray[tamaño] = newNode;
       trickleUp(tamaño++);
       return true;
       }  
-   
-   public void trickleUp(int index)
+   //int pos=NodoHeap element.posicion;
+   public void trickleUp(int pos)
       {
-      int parent = (index-1) / 2;
-      NodoHeap bottom = heapArray[index];
+      int parent = (pos-1) / 2;
+      NodoHeap bottom = heapArray[pos];
 
-      while( index > 0 &&
-             heapArray[parent].getKey() < bottom.getKey() )
+      while( pos > 0 &&
+             heapArray[parent].getElement().getNumP() < bottom.getElement().getNumP() )
          {
-         heapArray[index] = heapArray[parent];  // move it down
-         index = parent;
+         heapArray[pos] = heapArray[parent];  // move it down
+         pos = parent;
          parent = (parent-1) / 2;
          }  
-      heapArray[index] = bottom;
+      heapArray[pos] = bottom;
       }  
    
    public NodoHeap remove()           // delete item with max key
@@ -48,86 +47,32 @@ public class Heap {
       return root;
       }  
    
-   public void trickleDown(int index)
+   public void trickleDown(int pos)
       {
       int largerChild;
-      NodoHeap top = heapArray[index];       // save root
-      while(index < tamaño/2)       // while node has at
+      NodoHeap top = heapArray[pos];       // save root
+      while(pos < tamaño/2)       // while node has at
          {                               //    least one child,
-         int leftChild = 2*index+1;
+         int leftChild = 2*pos+1;
          int rightChild = leftChild+1;
                                          // find larger child
          if(rightChild < tamaño &&  // (rightChild exists?)
-                             heapArray[leftChild].getKey() <
-                             heapArray[rightChild].getKey())
+                             heapArray[leftChild].getElement().getNumP() <
+                             heapArray[rightChild].getElement().getNumP())
             largerChild = rightChild;
          else
             largerChild = leftChild;
                                          // top >= largerChild?
-         if( top.getKey() >= heapArray[largerChild].getKey() )
+         if( top.getElement().getNumP() >= heapArray[largerChild].getElement().getNumP() )
             break;
                                          // shift child up
-         heapArray[index] = heapArray[largerChild];
-         index = largerChild;            // go down
+         heapArray[pos] = heapArray[largerChild];
+         pos = largerChild;            // go down
          }  // end while
-      heapArray[index] = top;            // root to index
+      heapArray[pos] = top;            // root to index
       }  
+
+
    
-   public boolean change(int index, int newValue)
-      {
-      if(index<0 || index>=tamaño)
-         return false;
-      int oldValue = heapArray[index].getKey(); // remember old
-      heapArray[index].setKey(newValue);  // change to new
-
-      if(oldValue < newValue)             // if raised,
-         trickleUp(index);                // trickle it up
-      else                                // if lowered,
-         trickleDown(index);              // trickle it down
-      return true;
-      }  
-   
-   public void displayHeap()
-      {
-      System.out.print("heapArray: ");    // array format
-      for(int m=0; m<tamaño; m++)
-         if(heapArray[m] != null)
-            System.out.print( heapArray[m].getKey() + " ");
-         else
-            System.out.print( "-- ");
-      System.out.println();
-                                          // heap format
-      int nBlanks = 32;
-      int itemsPerRow = 1;
-      int column = 0;
-      int j = 0;                          // current item
-      String dots = "...............................";
-      System.out.println(dots+dots);      // dotted top line
-
-      while(tamaño > 0)              // for each heap item
-         {
-         if(column == 0)                  // first item in row?
-            for(int k=0; k<nBlanks; k++)  // preceding blanks
-               System.out.print(' ');
-                                          // display item
-         System.out.print(heapArray[j].getKey());
-
-         if(++j == tamaño)           // done?
-            break;
-
-         if(++column==itemsPerRow)        // end of row?
-            {
-            nBlanks /= 2;                 // half the blanks
-            itemsPerRow *= 2;             // twice the items
-            column = 0;                   // start over on
-            System.out.println();         //    new row
-            }
-         else                             // next item on row
-            for(int k=0; k<nBlanks*2-2; k++)
-               System.out.print(' ');     // interim blanks
-         }  // end for
-      System.out.println("\n"+dots+dots); // dotted bottom line
-      }  
-
 }
 
