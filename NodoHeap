@@ -1,19 +1,70 @@
 
   public class NodoHeap {
 
-    
-   private int Dato;  
+    private Pacientes element;
+    private NodoHeap next;
+    private NodoHeap prev;
 
-   public NodoHeap(int key){
-       Dato = key; 
-   }
+    //Constructores
+    public NodoHeap() {
+        this.element = null;
+        this.next = null;
+        this.prev = null;
+    }
 
-   public int getKey(){
-       return Dato; 
-   }
+    public NodoHeap(Pacientes element) {
+        this.element = element;
+        this.next = null;
+        this.prev = null;
+    }
 
-   public void setKey(int id){
-       Dato = id; 
-   }
+    public NodoHeap(Pacientes element, NodoHeap next, NodoHeap prev) {
+        this.element = element;
+        this.next = next;
+        this.prev = null;
+    }
+
+    //metodos
+
+    public Pacientes getElement() {
+        return this.element;
+    }
+
+    public void setElement(Pacientes element) {
+        this.element = element;
+    }
+
+    public NodoHeap getNext() {
+        return this.next;
+    }
+
+    public void setNext(NodoHeap next) {
+        this.next = next;
+    }
+    public NodoHeap getPrev() {
+        return this.prev;
+    }
+
+    public void setPrev(NodoHeap prev) {
+        this.prev = prev;
+    }
+    public boolean isEmpty() {
+        return prev == null;
+    }
+    public int posicion(Pacientes elemento){
+        if (this.isEmpty()) {
+            System.out.println("La cola esta vacia");
+        }
+        NodoHeap aux = prev;
+        int pos = 1;
+        while (aux != null) {
+            if (aux.getElement().equals(elemento)) {
+                return pos;
+            }
+            aux = aux.next;
+            pos++;
+        }
+        return -1;
+    }
     
 }
